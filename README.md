@@ -222,7 +222,7 @@ veda/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/veda-assessment.git
+git clone https://github.com/<your-username>/veda-assessment.git
 cd veda-assessment
 ```
 
@@ -271,9 +271,9 @@ NEXT_PUBLIC_WS_URL=ws://localhost:4000
 
 ```env
 PORT=4000
-MONGODB_URI=mongodb+srv://<user>:<password>@cluster0.xxxxx.mongodb.net/veda-assessment?retryWrites=true&w=majority
-REDIS_URL=rediss://default:<password>@generous-cow-xxxxx.upstash.io:6379
-OPENAI_API_KEY=sk-proj-...
+MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/veda-assessment?retryWrites=true&w=majority
+REDIS_URL=rediss://default:<password>@<host>.upstash.io:6379
+OPENAI_API_KEY=<your-openai-api-key>
 FRONTEND_URL=http://localhost:3000
 NODE_ENV=development
 UPLOAD_DIR=./uploads
@@ -339,3 +339,10 @@ Incoming events:
 | `job:progress` | `{ jobId, assignmentId, status: "active", progress: 0–100 }` |
 | `job:completed` | `{ jobId, assignmentId, status: "completed", progress: 100, resultId }` |
 | `job:failed` | `{ jobId, assignmentId, status: "failed", error: "message" }` |
+
+---
+
+## Author
+
+**Pradeep Dheenraj Singh**
+reyanshsinha19@gmail.com
