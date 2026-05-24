@@ -3,7 +3,13 @@ import { useEffect, useRef, useCallback } from 'react';
 import { WSMessage, JobStatus } from '@/types';
 import { useAssignmentStore } from '@/store/assignmentStore';
 
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:4000';
+// Derive WS URL from API URL if not explicitly set (https → wss, http → ws)
+function getWsUrl(): string {
+  if (process.env.NEXT_PUBLIC_WS_URL) return process.env.NEXT_PUBLIC_WS_URL;
+  const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+  return api.replace(/^https/, 'wss').replace(/^http/, 'ws');
+}
+const WS_URL = getWsUrl();
 
 export function useWebSocket(assignmentId?: string) {
   const wsRef = useRef<WebSocket | null>(null);
