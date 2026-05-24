@@ -345,4 +345,3 @@ Incoming events:
 ## Author
 
 **Pradeep Dheenraj Singh**
-reyanshsinha19@gmail.com
